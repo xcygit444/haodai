@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 400px;
+				height: 500px;
+				background-color: #666666;
+				margin-top: 100px;
+				margin-left: 100px;
+				padding: 40px;
+			}
+			.clearfix:after{
+				display: block;
+				clear: both;
+				content: '';
+			}
+			h2 {
+				color: white;
+			}
+			
+			.font1 {
+				
+			}
+			
+			.font1>span {
+				color: white;
+			}
+			.font1>span:nth-of-type(1){
+				float: left;
+			}
+			.font1>span:nth-of-type(1){
+				float: right;
+			}
+			.input1 {
+				display: flex;
+				position: relative;
+			}
+			
+			.input1>ul {
+				width: 310px;
+				background-color: white;
+				display: none;
+				position: absolute;
+				top: 40px;
+				z-index: 4;
+			}
+			
+			.input1>ul>li {
+				list-style: none;
+			}
+			.input1>input {
+				width: 340px;
+				height: 50px;
+				padding-left: 20px;
+			}
+			
+			.input1>span {
+				width: 55px;
+				height: 55px;
+				display: block;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: white;
+			}
+			
+			.input1>span:hover {
+				cursor: pointer;
+			}
+			
+			.input1>span>img {
+				width: 20px;
+				height: 15px;
+			}
+			
+			.p1 {
+				color: white;
+			}
+			
+			.input2 {
+				display: flex;
+				position: relative;
+			}
+			
+			.input2>ul {
+				width: 310px;
+				background-color: white;
+				display: none;
+				position: absolute;
+				top: 40px;
+			}
+			
+			.input2>ul>li {
+				list-style: none;
+			}
+			
+			.input2>input {
+				width: 340px;
+				height: 50px;
+				padding-left: 20px;
+			}
+			
+			.input2>span {
+				width: 55px;
+				height: 55px;
+				display: block;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: white;
+			}
+			
+			.input2>span:hover {
+				cursor: pointer;
+			}
+			
+			.input2>span>img {
+				width: 20px;
+				height: 15px;
+			}
+			
+			.search {
+				color: white;
+				width: 400px;
+				height: 50px;
+				background-color: dodgerblue;
+				text-align: center;
+				line-height: 50px;
+				margin-top: 20px;
+			}
+			
+			.search:hover {
+				cursor: pointer;
+			}
+			
+			.p2 {
+				color: white;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<h2>快速搜索消费贷款</h2>
+			<div class="font1 clearfix">
+				<span>贷款金额:</span>
+				<span>不足一万可用小数表示</span>
+			</div>
+			<div class="input1">
+				<input type="text" class="input1-1" value="14"/>
+				<span class="dianji1"><img src="img/website_guanwangshangcheng_xiajian.png"/></span>
+				<ul class="ul1">
+					<li>14万元</li>
+					<li>11万元</li>
+					<li>15万元</li>
+					<li>13万元</li>
+					<li>19万元</li>
+					<li>18万元</li>
+				</ul>
+			</div>
+			<div class="p1">贷款期限:</div>
+			<div class="input2">
+				<input type="text" class="input2-1" value="44"/>
+				<span class="dianji2"><img src="img/website_guanwangshangcheng_xiajian.png"/></span>
+				<ul class="ul2">
+					<li>44万元</li>
+					<li>4万元</li>
+					<li>13万元</li>
+					<li>43万元</li>
+					<li>45万元</li>
+					<li>31万元</li>
+				</ul>
+			</div>
+			<div class="search">
+				搜索一下
+			</div>
+			<p class="p2">9164种信贷产品 2000家银行 1403家小贷公司</p>
+		</div>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".dianji1").click(function() {
+					$(".ul1").css("display", "block")
+
+				})
+				$(".ul1 li").click(function() {
+					$(".ul1 li").css("background", "white")
+					$(this).css("background", "deepskyblue")
+					var a = parseInt($(this).text())
+					$(".input1-1").val(a)
+				})
+				$(".dianji1").click(function() {
+					$('.ul1').slideDown(200)
+					return false;
+				})
+				$("body").click(function() {
+					$('.ul1').slideUp(200)
+				})
+				$(".dianji2").click(function() {
+					$(".ul2").css("display", "block")
+				})
+				$(".ul2 li").click(function() {
+					$(".ul2 li").css("background", "white")
+					$(this).css("background", "deepskyblue")
+					var a = parseInt($(this).text())
+					$(".input2-1").val(a)
+				})
+				$(".dianji2").click(function() {
+					$('.ul2').slideDown(200)
+					return false;
+				})
+				$("body").click(function() {
+					$('.ul2').slideUp(200)
+				})
+			})
+		</script>
+	</body>
+
+</html>
